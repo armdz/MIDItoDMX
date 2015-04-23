@@ -155,7 +155,7 @@ void draw()
           bangBuffer[i] = false;
         }
       }
-      dmxSender.setDMXChannel(0, (int)buffer[0]);
+      dmxSender.setDMXChannel(i, (int)buffer[i]);
     }
   }
 

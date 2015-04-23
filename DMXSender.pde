@@ -8,7 +8,7 @@ static byte DMX_PRO_SEND_PACKET = byte(6);
 class DMXSender
 {
 
-  int universeSize = 512;
+  int universeSize = 128;
   byte[] channelValues;
   Serial  dmx;
   PApplet  parent;
