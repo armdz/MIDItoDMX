@@ -7,6 +7,6 @@ This is an alpha version, need a lot of corrections.
 
 When the app closes save a "settings.txt" file with the dmx port,midi port and damper val
 
-#MIDI LIBTARY
+#MIDI LIBRARY
 
 Uses this midi library http://www.smallbutdigital.com/themidibus.php
