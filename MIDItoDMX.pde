@@ -182,15 +182,28 @@ void draw()
 }
 
 void controllerChange(int channel, int number, int value) {
-  if (dmxSender.ok) {
-    this.dBuffer[number-1] = (int)map(value, 0, 127, 0, 255);
-    this.bangBuffer[number-1] = true;
+
+  if (number == 123) {
+    println("Apago todo");
+    if (dmxSender.ok) {
+      for (int i=0; i<dmxSender.universeSize; i++) {
+        this.dBuffer[i] = 0.0;
+        this.bangBuffer[i] = true;
+      }
+    }
+  } else {
+
+    if (dmxSender.ok) {
+      this.dBuffer[number-1] = (int)map(value, 0, 127, 0, 255);
+      this.bangBuffer[number-1] = true;
+    }
   }
   signal = true;
 }
 
 void controlEvent(ControlEvent theEvent) {
 
+  println(theEvent);
   if (theEvent.isGroup()) {
     if (theEvent.group().getName().equals("MIDI PORTS"))
     {
